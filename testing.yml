@@ -1,0 +1,16 @@
+---
+- hosts: all
+  
+  pre_tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: true
+        cache_valid_time: 86400
+      changed_when: false
+      
+  tasks:
+    - name: Ensure Firefox is installed
+      apt:
+        name: firefox
+        state: latest
+...
