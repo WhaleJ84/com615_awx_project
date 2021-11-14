@@ -15,4 +15,7 @@
         name: firefox
         state: latest
       become: true
+      
+    - name: Ensure SNMP client is set up
+      include_role: whalej84_snmpclient
 ...
