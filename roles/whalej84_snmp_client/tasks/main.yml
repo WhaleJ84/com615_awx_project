@@ -1,6 +1,6 @@
 ---
- - name: INSTALL | Ensure snmp tools are installed from apt repository
-   become: True
+ - name: INSTALL | Ensure SNMP tools are installed from apt repository
+   become: true
    ansible.builtin.apt:
      pkg:
      - libsnmp-dev
@@ -8,3 +8,9 @@
      - snmpd
      state: latest
    when: ansible_facts['os_family'] == "Debian"
+
+ - name: CONFIGURE | Ensure SNMP user is created
+   become: true
+   ansible.builtin.command:
+    cmd: net-snmp-config --create-snmpv3-user -ro -A {{ auth_password }} -X {{ encryption_password }} -a {{ auth_algorithm }} -x {{ crypto_algorithm }} {{ auth_username }}
+...
