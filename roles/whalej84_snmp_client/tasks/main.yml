@@ -10,6 +10,9 @@
    when: ansible_facts['os_family'] == "Debian"
    notify: Stop SNMP service
 
+ - name: Flush handlers
+   meta: flush_handlers
+
  - name: CONFIGURE | Ensure SNMP user is created
    become: true
    ansible.builtin.command:
