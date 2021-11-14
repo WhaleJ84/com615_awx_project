@@ -2,10 +2,9 @@
  - name: INSTALL | Ensure snmp tools are installed from apt repository
    become: True
    ansible.builtin.apt:
-     name: "{{ item }}"
-      - loop:
-         - libsnmp-dev
-         - snmp
-         - snmpd
+     pkg:
+     - libsnmp-dev
+     - snmp
+     - snmpd
      state: latest
    when: ansible_facts['os_family'] == "Debian"
