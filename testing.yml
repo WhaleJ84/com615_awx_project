@@ -17,5 +17,6 @@
       become: true
       
     - name: Ensure SNMP client is set up
-      include_role: whalej84_snmp_client
+      include_role:
+        name: whalej84_snmp_client
 ...
