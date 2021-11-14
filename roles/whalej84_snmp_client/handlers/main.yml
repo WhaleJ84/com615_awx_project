@@ -1,0 +1,6 @@
+---
+- name: Stop SNMP service
+  ansible.builtin.systemd:
+    name: snmpd
+    state: stop
+...
