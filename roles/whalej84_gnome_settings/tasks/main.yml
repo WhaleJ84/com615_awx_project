@@ -14,6 +14,7 @@
 - name: INSTALL | Ensure psutil is installed via pip
   ansible.builtin.pip:
     name: psutil
+  become: true
 
 - name: CONFIGURE | Ensure desktop background is company brand
   community.general.dconf:
