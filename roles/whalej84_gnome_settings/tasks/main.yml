@@ -11,9 +11,9 @@
     state: present
   become: true
 
-#- name: INSTALL | Ensure psutil is installed via pip
-#  ansible.builtin.pip:
-#    name: psutil
+- name: INSTALL | Ensure psutil is installed via pip
+  ansible.builtin.pip:
+    name: psutil
 
 - name: CONFIGURE | Ensure desktop background is company brand
   community.general.dconf:
