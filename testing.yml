@@ -12,11 +12,15 @@
   tasks:
     - name: Ensure Firefox is installed
       apt:
-        name: firefox
+        name: firefox-esr
         state: latest
       become: true
       
-    - name: Ensure SNMP client is set up
+#    - name: Ensure SNMP client is set up
+#      include_role:
+#        name: whalej84_snmp_client
+
+    - name: Ensure Gnome follows policy
       include_role:
-        name: whalej84_snmp_client
+        name: whalej84_gnome_settings
 ...
