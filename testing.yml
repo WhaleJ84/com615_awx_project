@@ -10,11 +10,11 @@
       become: true
       
   tasks:
-    - name: Ensure Firefox is installed
-      apt:
-        name: firefox-esr
-        state: latest
-      become: true
+#    - name: Ensure Firefox is installed
+#      apt:
+#        name: firefox-esr
+#        state: latest
+#      become: true
       
 #    - name: Ensure SNMP client is set up
 #      include_role:
