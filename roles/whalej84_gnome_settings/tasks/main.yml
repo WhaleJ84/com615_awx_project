@@ -3,6 +3,7 @@
   ansible.builtin.copy:
     src: cat_wallpaper.jpeg
     dest: /usr/share/backgrounds/cat_wallpaper.jpeg
+  become: true
     
 - name: CONFIGURE | Ensure desktop background is company brand
   community.general.dconf:
