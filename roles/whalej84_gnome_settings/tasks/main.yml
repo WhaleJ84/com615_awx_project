@@ -18,6 +18,6 @@
 - name: CONFIGURE | Ensure desktop background is company brand
   community.general.dconf:
     key: "/org/gnome/desktop/background/picture-uri"
-    value: "'file:///usr/share/backgrounds/cat_wallpaper.jpeg'"
+    value: 'file:///usr/share/backgrounds/cat_wallpaper.jpeg'
     state: present
 ...
