@@ -1,0 +1,8 @@
+---
+- name: CONFIGURE | Ensure desktop background is company brand
+  community.general.dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "{{ picture_uri }}"
+    state: present
+  when: picture_uri is defined
+...
