@@ -20,6 +20,7 @@
     key: "/org/gnome/desktop/background/picture-uri"
     value: "'file:///usr/share/backgrounds/cat_wallpaper.jpeg'"
     state: present
+  become: true
     
 - name: TEST | Show weekday in clock
   community.general.dconf:
