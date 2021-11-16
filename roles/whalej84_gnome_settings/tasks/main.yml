@@ -16,6 +16,12 @@
     name: psutil
   become: true
 
+- name: CONFIGURE | Ensure background is on remote computer
+  ansible.builtin.copy:
+    src: user
+    dest: /etc/dconf/profile/user
+  become: true
+
 # NOTE: Changing desktop doesn't seem to work
 # NOTE: Modifying dconf only modifies it for the ansible user by default
 #- name: CONFIGURE | Ensure desktop background is company brand
