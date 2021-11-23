@@ -33,6 +33,7 @@
     src: 01-background
     dest: /etc/dconf/db/local.d/01-background
   become: true
+  notify: Update dconf
 
 # NOTE: Changing desktop doesn't seem to work
 # NOTE: Modifying dconf only modifies it for the ansible user by default
