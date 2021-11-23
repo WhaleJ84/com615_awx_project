@@ -16,10 +16,22 @@
     name: psutil
   become: true
 
-- name: CONFIGURE | Ensure background is on remote computer
+- name: CONFIGURE | Ensure /etc/dconf/profile/user is correct
   ansible.builtin.copy:
     src: user
     dest: /etc/dconf/profile/user
+  become: true
+  
+- name: CONFIGURE | Ensure /etc/dconf/db/local.d exists
+  ansible.builtin.file:
+    dest: /etc/dconf/db/local.d
+    state: directory
+  become: true
+  
+- name: CONFIGURE | Ensure /etc/dconf/db/local.d/01-background is correct
+  ansible.builtin.template:
+    src: 01-background
+    dest: /etc/dconf/db/local.d/01-background
   become: true
 
 # NOTE: Changing desktop doesn't seem to work
