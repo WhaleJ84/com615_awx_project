@@ -17,4 +17,8 @@
     - name: Ensure Thunderbird is configured correctly
       include_role:
         name: whalej84_thunderbird
+        
+    - name: Ensure Firewall rules are configured correctly
+      include_role:
+        name: whalej84_firewall_rules
 ...
