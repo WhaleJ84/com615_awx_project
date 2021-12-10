@@ -1,0 +1,6 @@
+---
+- name: INSTALL | Ensure Thunderbird is installed
+  ansible.builtin.apt:
+    name: thunderbird
+    state: latest
+  become: true
