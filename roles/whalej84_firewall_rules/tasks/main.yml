@@ -5,11 +5,19 @@
     state: latest
   become: true
   
-- name: CONFIGURE | Allow related and established connections
+- name: CONFIGURE | Allow IMAP traffic from HQ
   community.general.ufw:
     rule: allow
     direction: in
     proto: tcp
     src: 172.16.10.0/24
+    from_port: 993
+  become: yes
+
+- name: CONFIGURE | Deny all other IMAP traffic
+  community.general.ufw:
+    rule: deny
+    direction: in
+    proto: tcp
     from_port: 993
   become: yes
