@@ -6,8 +6,10 @@
   become: true
   
 - name: CONFIGURE | Allow related and established connections
-  ansible.builtin.iptables:
-    chain: INPUT
-    ctstate: ESTABLISHED,RELATED
-    jump: ACCEPT
+  community.general.ufw:
+    rule: allow
+    direction: in
+    proto: tcp
+    src: 172.16.10.0/24
+    from_port: 993
   become: yes
