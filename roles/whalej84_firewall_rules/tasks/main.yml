@@ -1,0 +1,13 @@
+---
+- name: INSTALL | Ensure GUFW is installed
+  ansible.builtin.apt:
+    name: gufw
+    state: latest
+  become: true
+  
+- name: CONFIGURE | Allow related and established connections
+  ansible.builtin.iptables:
+    chain: INPUT
+    ctstate: ESTABLISHED,RELATED
+    jump: ACCEPT
+  become: yes
