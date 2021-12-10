@@ -5,6 +5,13 @@
     state: latest
   become: true
   
+- name: CONFIGURE | Allow SSH traffic
+  community.general.ufw:
+    rule: limit
+    proto: tcp
+    port: ssh
+  become: yes
+  
 - name: CONFIGURE | Allow IMAP traffic from HQ
   community.general.ufw:
     rule: allow
